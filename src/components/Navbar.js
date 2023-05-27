@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import Button from 'react-bootstrap/Button';
+import logo from '../icon.png'
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
@@ -11,11 +12,18 @@ import {
   } from "react-router-dom";
 
 class CustomNavbar extends PureComponent {
+    constructor(){
+        super();
+        this.state={
+            searchItem:""
+        }
+    }
     render() {
         return (
             <>
-                <Navbar bg="light" expand="lg">
+                <Navbar bg="light"  expand="lg">
                     <Container fluid>
+                    <img src={logo} alt="Logo" height={"30rem"} width={"30rem"} className={"mx-4"}/>
                         <Navbar.Brand to="/General">News Monkey</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
@@ -51,22 +59,19 @@ class CustomNavbar extends PureComponent {
                                     Technology
                                     </NavDropdown.Item>
                                 </NavDropdown>
-
-                                {/* <Nav.Link to="/" disabled>
-                                    Link
-                                </Nav.Link> */}
                             </Nav>
 
 
-                            <Form className="d-flex">
+                            {/* <Form className="d-flex">
                                 <Form.Control
                                     type="search"
                                     placeholder="Search"
                                     className="me-2"
                                     aria-label="Search"
+                                    onChange={(event)=>{this.setState({searchItem:event.target.value})}}
                                 />
-                                <Button variant="outline-success">Search</Button>
-                            </Form>
+                                <Button variant="outline-success" as={Link} to={`/${this.state.searchItem}`}>Search</Button> 
+                            </Form>*/}
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
