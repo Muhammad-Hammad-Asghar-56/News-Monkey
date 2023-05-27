@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
-export class NewComponent extends PureComponent {
+import Label from 'react-bootstrap/FormLabel'
+export class NewCard extends PureComponent {
     constructor(props){
         super();
         this.props=props;
@@ -18,7 +18,9 @@ export class NewComponent extends PureComponent {
                         <Card.Text>
                             {this.props.description.slice(0,80)+"..."}
                         </Card.Text>
-                        <Button variant="primary">Read more</Button>
+                        <Label className={"d-block "}>Date : {this.props.publishedAt.split("T")[0]}</Label>
+                        <Label className={"d-block "}>Time : {this.props.publishedAt.split("T")[1]}</Label>
+                        <Button href= {this.props.btnUrl} target='_blank' variant="primary">Read more</Button>
                     </Card.Body>
                 </Card>
             </div>
@@ -26,4 +28,4 @@ export class NewComponent extends PureComponent {
     }
 }
 
-export default NewComponent
+export default NewCard

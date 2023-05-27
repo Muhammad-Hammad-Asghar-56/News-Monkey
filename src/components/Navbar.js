@@ -6,7 +6,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import {
+    Link
+  } from "react-router-dom";
 
 class CustomNavbar extends PureComponent {
     render() {
@@ -14,7 +16,7 @@ class CustomNavbar extends PureComponent {
             <>
                 <Navbar bg="light" expand="lg">
                     <Container fluid>
-                        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+                        <Navbar.Brand to="/General">News Monkey</Navbar.Brand>
                         <Navbar.Toggle aria-controls="navbarScroll" />
                         <Navbar.Collapse id="navbarScroll">
                             
@@ -24,37 +26,35 @@ class CustomNavbar extends PureComponent {
                                 navbarScroll
                             >
                                 
-                                <Nav.Link href="#action2">Headlines</Nav.Link>
+                                <Nav.Link as={Link} to="/">Headlines</Nav.Link>
                                 
-                                <NavDropdown title="Categories" id="navbarScrollingDropdown">
-                                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                                    
-                                    <NavDropdown.Item href="#action4">
+                                <NavDropdown title="Categories" id="navbarScrollingDropdown">                                 
+                                    <NavDropdown.Item as={Link} to="/Business">
                                     Business 
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">
+                                    <NavDropdown.Item as={Link} to="/Entertainment">
                                     Entertainment 
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">
+                                    <NavDropdown.Item as={Link} to="/General">
                                     General 
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">
+                                    <NavDropdown.Item as={Link} to="/Health">
                                     Health 
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">
+                                    <NavDropdown.Item as={Link} to="/Science">
                                     Science
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">
+                                    <NavDropdown.Item as={Link} to="/Sports">
                                     Sports
                                     </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action4">
+                                    <NavDropdown.Item as={Link} to="/Technology">
                                     Technology
                                     </NavDropdown.Item>
                                 </NavDropdown>
 
-                                <Nav.Link href="#" disabled>
+                                {/* <Nav.Link to="/" disabled>
                                     Link
-                                </Nav.Link>
+                                </Nav.Link> */}
                             </Nav>
 
 
