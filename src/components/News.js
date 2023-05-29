@@ -47,7 +47,7 @@ export class News extends PureComponent {
             article: parsedData.articles,
             isLoading: false
         });
-
+        document.title="News Monley - "+this.props.category.toUpperCase();
     }
     async componentDidUpdate(prevProps) {
         if (prevProps.category !== this.props.category) {
@@ -74,6 +74,7 @@ export class News extends PureComponent {
           console.error(error);
           this.setState({ isLoading: false });
         }
+        document.title="News Monley - "+this.props.category.toUpperCase();
     };    
 
 
