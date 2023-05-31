@@ -8,7 +8,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 function App() {
 
   const routerMapping = [
-    { path: "/", category: "" },
+    { path: "/", category: "general" },
     { path: "/business", category: "business" },
     { path: "/entertainment", category: "entertainment" },
     { path: "/general", category: "general" },
@@ -26,7 +26,7 @@ function App() {
         <CustomNavbar />
         <Routes>
           {routerMapping.map((element) => (
-            <Route exact path={element.path} key={element.path} element={<News Country="us" category={element.category} endpoint="top-headlines"/>} />
+            <Route exact path={element.path} key={element.path} element={<News Country="us" category={element.category} routerMapping={routerMapping} endpoint="top-headlines"/>} />
           ))}
           <Route exact path={"/:q"} element={<News  endpoint="everything" />} />
         </Routes>

@@ -21,7 +21,7 @@ export class NewCard extends PureComponent {
                         <Button href={this.props.btnUrl} target='_blank' variant="primary">Read more</Button>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">By <strong> {this.props.author ? this.props.author : "Unkown"} </strong>at {new Date(this.props.publishedAt).toUTCString()}</small>
+                            <small className="text-muted">By <strong> {this.props.author ? this.props.author : "Unkown"} </strong>at {new Date(this.props.publishedAt).toUTCString()}</small>
                     </Card.Footer>
                 </Card>
             </div>
